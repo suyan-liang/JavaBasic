@@ -9,4 +9,7 @@ package TCP;
  * 步骤：
  */
 public class SocketDemo {
+    public static void main(String[] args) {
+        System.out.println("test github");
+    }
 }

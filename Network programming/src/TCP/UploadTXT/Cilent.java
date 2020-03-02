@@ -16,6 +16,8 @@ import java.net.Socket;
  *
  *
  * 也可以用PrintWriter代替BufferedWriter进行输出，参数置为true，println  这样就无须考虑Buffered存在的问题
+ * 凡是用到BufferedWriter  一\n 二刷新   千万别忘，不然会shi
+ *
  */
 public class Cilent {
     public static void main(String[] args) throws IOException {
@@ -28,7 +30,13 @@ public class Cilent {
             bufferedWriter.write(text+"\n");//有readLine()等着的时候一定要加"\n"
             bufferedWriter.flush();
         }
-        System.out.println("上传完毕");
+//        bufferedWriter.write("over"+"\n");
+//        bufferedWriter.flush();
+        socket.shutdownOutput();
+        BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String ans=in.readLine();
+        System.out.println(ans);
+        bufferedReader.close();
         socket.close();
     }
 }

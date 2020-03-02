@@ -13,6 +13,9 @@ import java.net.Socket;
  *
  *
  * 注意：FileReader和FileWriter只能操作文本而不能操作PPT文件!!!!!!
+ *
+ *
+ * 也可以用PrintWriter代替BufferedWriter进行输出，参数置为true，println  这样就无须考虑Buffered存在的问题
  */
 public class Cilent {
     public static void main(String[] args) throws IOException {

@@ -15,6 +15,7 @@ import java.net.Socket;
  * 注意：FileReader和FileWriter只能操作文本而不能操作PPT文件!!!!!!
  *
  *
+ *
  * 也可以用PrintWriter代替BufferedWriter进行输出，参数置为true，println  这样就无须考虑Buffered存在的问题
  * 凡是用到BufferedWriter  一\n 二刷新   千万别忘，不然会shi
  *

@@ -28,6 +28,7 @@ import java.net.Socket;
  * 标准  void	shutdownOutput() 使用socket的此函数可以在输出流的末尾添加结束标志
  *       void	shutdownInput()                         输入流
  *
+ *
  */
 public class Server {
     public static void main(String[] args) throws IOException {

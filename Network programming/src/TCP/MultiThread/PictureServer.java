@@ -24,6 +24,7 @@ import java.net.Socket;
  *     new Thread(new Task(s)).start();//在Task中进行s的关闭
  * }
  *
+ *
  */
 public class PictureServer {
     public static void main(String[] args) throws IOException {

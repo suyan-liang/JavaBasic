@@ -25,6 +25,7 @@ public class Cilent {
         BufferedReader bufferedReader=new BufferedReader(new FileReader("C:\\test_files\\123.txt"));
         BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         String text=null;
+
         while((text=bufferedReader.readLine())!=null)
         {
             bufferedWriter.write(text+"\n");//有readLine()等着的时候一定要加"\n"

@@ -27,6 +27,7 @@ import java.net.Socket;
  * 添加一个over标志但是这样不安全
  * 标准  void	shutdownOutput() 使用socket的此函数可以在输出流的末尾添加结束标志
  *       void	shutdownInput()                         输入流
+ *
  */
 public class Server {
     public static void main(String[] args) throws IOException {

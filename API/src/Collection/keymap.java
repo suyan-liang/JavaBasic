@@ -52,7 +52,7 @@ class Test {
 public class keymap {
     public static void main(String[] args) {
 /*         List l1=new ArrayList();
-        for (Test test : list) {
+        for (PolymorphismTest test : list) {
 
         }*/
         List list = new ArrayList();

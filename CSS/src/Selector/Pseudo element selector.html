@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <!--
+
+    伪元素就相当于事件吧
+    用 :
+
+
+    在浏览器可能看不到是浏览器限制了，并不是代码的问题
+
+    -->
+    <style>
+        /*这些伪元素在多种标签上都可使用，看浏览器支不支持了*/
+        /*段落首字*/
+        p:first-letter{
+            font-size: 52px;
+        }
+        /*超链接未访问*/
+        a:link{
+            background-color: #6b25e3;
+            color: black;
+            text-underline: none;
+
+        }
+        /*鼠标悬停*/
+        a:hover{
+            font-size: 28px;
+            background-color: black;
+            color: aqua;
+        }
+        /*鼠标点击*/
+        a:active{
+            font-size: 38px;
+            background-color: aquamarine;
+            color: #000;
+        }
+        /*访问后*/
+        a:visited{
+            font-size: 55px;
+            background-color: cornflowerblue;
+            color: darkgoldenrod;
+        }
+        p:hover{
+            background-color: aqua;
+        }
+        /*
+        focus是鼠标光标闪烁的时候，通常用于输入框
+         */
+        input:focus{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<a href="https://www.baidu.com" target="_blank">百度</a>
+<p>这是一个段落</p>
+<input type="text"/>
+</body>
+</html>

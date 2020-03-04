@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css和html结合的方式</title>
+
+<!--第二种方式
+标签方式 style标签
+一般放在head里面，先加载
+
+复用性很强,用于多个div标签都是用这种style
+要指明作用对象
+
+如果在head中指定了div的style，在div标签中又写style属性，那么div标签中写的会覆盖与style标签中重合的部分
+-->
+    <style>
+        div{
+            background-color: aqua;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<!--第一种方式
+每一个html标签都有一个style属性，在标签中可以设置显示形式
+当多个style属性时，冒号表示值，分号隔开
+但是复用性较差
+ -->
+<div style="background-color: beige; color: #6b25e3">hello,这是div的区域,第一种css形式，一整行呢</div>
+<div >第二种css形式</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<!--
+可以和服务器端进行交流，相当重要的标签 form
+在form标签中，使用input标签进行输入
+input标签type属性可以选择输入框的形式
+-->
+
+<body>
+<!--
+action可以指定服务端，method是数据提交方式
+
+区别
+get提交显示的信息会显示在地址栏 而post提交显示的信息不显示在地址栏中
+get提交对于敏感数据信息不安全   而post提交就很安全
+get提交对于数据量大不行，地址栏有限；post提交可以提交大体积数据
+get提交将信息封装到请求消息的请求行；而post提交将信息封装到了请求体中
+在服务器端的区别
+如果出现将中文提交到Tomcat服务器，服务器默认会用ISO8859-1进行解码会出现乱码，
+通过ISO8850-1进行编码获得二进制源码，再用指定的中文码表解码即可。这种方式对get和post都有效
+但是对于post提交的中文，还有一种解决方案，直接用服务器端的一个对象request的setCharacterEncoding方法
+直接设定的中文码表将中文解析出来，这种方法只对post有效
+
+和服务端交互的三种方式
+1.地址栏输入URL  get
+2.超链接         get
+3.表单           get或者post
+
+校验数据要放在服务端进行
+不然随意通过表单源代码修改和超链接都可以实现暴力提交
+而且这也是验证码出现的原因
+
+如果服务端做了增强型的校验，客户端还需要校验吗？
+需要。为了增强用户体验，减轻服务器的压力
+-->
+
+<form action="https://www.baidu.com" method="get">
+    <table border="5" bordercolor="blue" width="1000" align="center">
+        <tr>
+            <th colspan="2">注册表单</th>
+        </tr>
+        <tr>
+            <td>
+                用户名:
+            </td>
+            <td>
+                <input type="text" name="user" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                密码:
+            </td>
+            <td>
+                <input type="password" name="password" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                选择性别:
+            </td>
+            <td>
+                <!--radio标签可以进行选择，但必须加上name组才有效果，当多个输入时，name相同实现单选效果，name不同实现多选效果,checked="checked"默认被选中-->
+                <input type="radio" name="sex" value="man"/>男<input type="radio" name="sex" checked="checked" value="woman"/>女
+            </td>
+        </tr>
+        <tr>
+            <td>
+                所会技术
+            </td>
+            <td>
+                <!--checkbox直接实现多选，同样可以用checked标签实现默认，如果name值一样，提交的是最后选的那个，最好name不一样    -->
+                <input type="checkbox" name="tech0" value="java"/>Java
+                <input type="checkbox" name="tech1" value="c/cpp"/>C/C++
+                <input type="checkbox" name="tech2" value="python"/>Python
+                <input type="checkbox" name="tech3" value="c#"/>C#
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!--浏览文件-->
+                选择文件
+            </td>
+            <td>
+                <input type="file" name="myfile" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                国籍
+            </td>
+            <td>
+                <!--选择表单 select,需要定义name，在里面有option选项标签，必须定义value
+                    selected="selected"是默认
+                 -->
+                <select name="country">
+                    <option value="none">----选择国籍----</option>
+                    <option value="cn" selected="selected">中国</option>
+                    <option value="en">英国</option>
+                    <option value="am">美国</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!--文本表单 textarea 在里面写大段文字-->
+                个人简介
+            </td>
+            <td>
+                <textarea name="text">
+
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <!--reset清除表单数据  ，submit提交表单数据，会提交到服务器，要想让服务器识别，每个表都必须有name和value属性!!!-->
+            <th> <input type="reset" value="清除数据"></th>
+            <th><input type="submit" value="提交表单数据"></th>
+        </tr>
+    </table>
+<hr/>
+<h1>下面是练习form的其他内容时的</h1>
+    <br/>
+
+    <!--图片提交-->
+    <input type="image" src="img/jialuo.jpg" width="100" height="200"/>
+    <br/>
+
+
+    <!--隐藏组件 数据不需要客户端知道，但是要提交给服务器（比如运算的数据）-->
+    <input type="hidden" name="myname" value="data"/>
+    <br/>
+    <!--按钮组件，需要自定义响应-->
+    <input type="button" onclick="alert('hello')" value="一个按钮"/>
+    <br/>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>框架标签</title>
+</head>
+<!--
+已经过时
+定义框架，使用frameset标签，一般写在body之外
+frameset相当于切割  rows="30%,*"按行切两部分，cols按列 每部分都可以放一个html文件
+frame框架 src="xx.html" 放置资源，按照依次顺序
+可以嵌套分割
+-->
+<frameset rows="30%,20%,*">
+    <frame src="href.html"/>
+    <frameset cols="50%,*">
+        <frame src="img.html"/>
+        <frame src="table.html"/>
+    </frameset>
+    <frame src="列表.html"/>
+</frameset>
+<body>
+
+
+</body>
+</html>

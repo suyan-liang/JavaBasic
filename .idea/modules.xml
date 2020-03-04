@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/API/API.iml" filepath="$PROJECT_DIR$/API/API.iml" />
       <module fileurl="file://$PROJECT_DIR$/GUI/GUI.iml" filepath="$PROJECT_DIR$/GUI/GUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Grammar/Grammar.iml" filepath="$PROJECT_DIR$/Grammar/Grammar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTML/HTML.iml" filepath="$PROJECT_DIR$/HTML/HTML.iml" />
       <module fileurl="file://$PROJECT_DIR$/IOstream/IOstream.iml" filepath="$PROJECT_DIR$/IOstream/IOstream.iml" />
       <module fileurl="file://$PROJECT_DIR$/Multi_Thread/Multi_Thread.iml" filepath="$PROJECT_DIR$/Multi_Thread/Multi_Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/Network programming/Network programming.iml" filepath="$PROJECT_DIR$/Network programming/Network programming.iml" />

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script type="text/javascript">
+        /*
+         * js中的对象直接使用var创建，创建时直接进行初始化
+         * 对象中函数的写法注意点 先写函数名，后面加上function
+         *
+         * 其他和java差不多
+         */
+        var cat={
+            name:"miao",
+            age:18,
+            color:"white",
+            sleep:function () {
+                document.write(this.name+"本喵睡觉了.....")
+            }
+        };
+        document.write(cat.name+"<br/>");
+        cat.sleep();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

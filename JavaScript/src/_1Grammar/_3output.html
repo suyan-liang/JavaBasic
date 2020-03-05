@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js输出测试</title>
+</head>
+<script type="text/javascript">
+    document.write("这是第一种输出,常用于测试");
+    console.log("这是第二种输出，按F12打开控制台看");
+    window.alert("第三种，警示栏");
+</script>
+<body>
+
+<p id="demo">
+hello
+</p>
+
+<script type="text/javascript">
+    document.getElementById("demo").innerHTML="第四种，操作标签内部输出数据,放在前面会被覆盖";
+</script>
+</body>
+</html>

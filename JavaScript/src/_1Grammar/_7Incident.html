@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件响应</title>
+    <script type="text/javascript">
+        /*
+         * 常用函数来响应事件
+         * 事件在button等组件用的比较多
+         *
+         *
+         *       常见事件
+         *   onchange	HTML 元素已被改变
+         *   onclick	用户点击了 HTML 元素
+         *   onmouseover	用户把鼠标移动到 HTML 元素上
+         *   onmouseout	用户把鼠标移开 HTML 元素
+         *   onkeydown	用户按下键盘按键
+         *   onload	浏览器已经完成页面加载
+         */
+        function showtime(id) {
+            document.getElementById(id).innerHTML=Date();
+        }
+        function mouseon() {
+            document.getElementById("block").style.backgroundColor="red";
+        }
+        function mouseout() {
+            document.getElementById("block").style.backgroundColor="springgreen";
+        }
+    </script>
+</head>
+<body>
+<button id="buttons" onclick="showtime(id)">
+    时间
+</button>
+<div id="block" onmouseover="mouseon()" onmouseout="mouseout()" style="background-color: springgreen">
+    这是一个块，把鼠标放上去试试
+</div>
+</body>
+</html>

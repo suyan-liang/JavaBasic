@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个小demo</title>
+    <style>
+        div{
+            /*float就是不占位了，后面的补位*/
+
+            height: 100px;
+            width: 200px;
+        }
+        #div1{
+            /*边框一颜色二粗细都要设置，缺一不可*/
+            float: left;
+            border: black solid 5px;
+            background-color: bisque;
+            padding: 20px;
+            /*颜色选取内容*/
+            background-clip: content-box;
+            margin-top: 30px;
+        }
+        #div2{
+            float: left;
+            margin-top: 30px;
+            border: #6b25e3 solid 2px;
+            padding: 20px;
+            background-color: springgreen;
+            background-clip: content-box;
+        }
+        #div3{
+            float: right;
+            padding: 20px;
+            border: coral solid 3px;
+            background-color: darkorchid;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">第一个盒子</div>
+    <br/>
+<div id="div2">第二个盒子</div>
+    <br/>
+<div id="div3">第三个盒子</div>
+</body>
+</html>

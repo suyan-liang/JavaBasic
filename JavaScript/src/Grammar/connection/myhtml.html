@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>演示html和js结合的html文件</title>
+</head>
+<body>
+<!--结合的第一种方式-->
+<script type="text/javascript">
+    alert("hello，js");
+</script>
+
+<!--结合的第二种方式-->
+<script type="text/javascript" src="myjs.js">
+    //!!!!!此处如果写js代码，将不会被执行。 所以一般都使用里面没有内容的script标签来导入js代码
+</script>
+</body>
+</html>

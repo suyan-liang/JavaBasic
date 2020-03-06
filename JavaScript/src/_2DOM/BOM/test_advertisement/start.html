@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开始界面</title>
+        <script type="text/javascript">
+            /*
+             * 垃圾弹窗广告的原理
+             *
+             * 页面一加载完毕就弹出垃圾网站
+             * 而且垃圾网站使用了focus一直前置
+             * 点击×出发onunload事件设置为再次打开这个网站
+             * 这样就成了流氓广告
+             *
+             *
+             * 谷歌会自动拦截
+             */
+            onload=function () { open("ad.html","_blank","height=200,width=400,status=no,toolbar=no,menubar=no,location=no") };
+        </script>
+</head>
+<body>
+
+</body>
+</html>

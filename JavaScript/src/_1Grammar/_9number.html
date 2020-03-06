@@ -5,14 +5,23 @@
     <title>数值类型</title>
     <script type="text/javascript">
         /*
+         * 和Java的Integer等基本数据类差不多
          * 1.支持科学计数法  1.23e5
          * 2.JavaScript 数值始终是 64 位的浮点数
          * 3.整数（不使用指数或科学计数法）会被精确到 15 位 ,小数的最大数是 17 位，但是浮点的算数并不总是 100% 精准,使用乘除法有助于解决上面的问题
          * 4.Infinity最大值  Infinity 是数：typeOf Infinity 返回 number。
-         * 5.数字的toString方法传入数字进行相应进制的转换
+         * 5.数字类型的toString方法传入数字进行相应进制的转换
          * 6.toExponential() 返回字符串值，它包含已被四舍五入并使用指数计数法的数字
-         * 7.toFixed() 返回字符串值，它包含了指定位数小数的数字
-         * 8.
+         * 7.toFixed() 返回字符串值，它包含了指定位数小数的数字   只有小数部分
+         * 8.toPrecision() 返回字符串值，它包含了指定长度的数字  包括整数部分
+         * 9.valueOf() 以数值返回数值  返回number类型
+         * 10.Number() 可用于把 JavaScript 变量转换为数值  传入"10"返回10  ，无法解析返回NaN ，传入日期对象返回毫秒数
+         * 11.parseInt() 解析一段字符串并返回数值。允许空格。只返回首个数字：
+         *   parseInt("10 years");   // 返回 10
+         *   parseInt("years 10");   // 返回 NaN
+         * 12.两个常量和Java一致，只能通过类名调用，如用对象调用返回undefined
+         * 13.要让 Number.MAX_VALUE 变成 Infinity , 至少要加上一个被 IEEE754四舍五入为 2的970次方 的数
+         *
          */
     </script>
 </head>

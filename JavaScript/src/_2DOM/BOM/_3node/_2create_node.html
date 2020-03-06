@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建添加节点</title>
+    <style>
+        div{
+            border: black solid 2px;
+            padding: 10px;
+            margin:10px;
+            height: 100px;
+            width: 200px;
+        }
+        #div_1{
+            background-color: darkorchid;
+        }
+        #div_2{
+            background-color: bisque;
+        }
+        #div_3{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div_1">
+
+</div>
+<div id="div_2">
+    这是第二块
+</div>
+<div id="div_3">
+    这是第三块
+</div>
+<script type="text/javascript">
+    /*
+     * 创建并添加节点  文本节点
+     * 1.创建一个文本节点 ,注意文本节点也是一个节点   使用document的createTextNode方法,返回一个节点对象
+     * 2.获取div_1节点
+     * 3.将文本节点添加到div_1节点        appendChild方法
+     */
+    function create_text_and_append() {
+        var new_node=document.createTextNode("这是第一块");
+        var target=document.getElementById("div_1");
+        target.appendChild(new_node);
+    }
+    /*
+     * 创建并添加一个按钮节点，如何操作?
+     * 1.创建任意元素，document.createElement(String label) 参数是标签名
+     * 2.设置其属性值
+     * 3.获取div_1节点
+     * 4.添加
+     *
+     *
+     * 当然也可以在别的地方添加节点，找好dom树结构即可
+     */
+    function create_element_and_add() {
+        var new_node=document.createElement("input");
+        new_node.type="button";
+        new_node.value="新按钮诶!";
+
+        var target=document.getElementById("div_1");
+
+        target.appendChild(new_node);
+    }
+    /*
+     * 使用innerHTML进行更简单的实现
+     */
+    function create_easy() {
+        var node=document.getElementById("div_1");
+        node.innerHTML="<input type='button' value='innerHTML实现按钮'/>";
+    }
+
+
+    /*
+     * 删除节点
+     * 需求：删除div_2节点
+     * removeNode好像没有了，没有被define，主流浏览器不识别 ,老版本ie可以识别..........xswl
+     *
+     */
+    function old_remove_node() {
+        var target=document.getElementById("div_2");
+        target.removeNode(true);//传false，只删自己；传true，删完
+    }
+    /*
+     * 删除节点主流方法，removeChild
+     */
+    function remove_node() {
+        var target=document.getElementById("div_2");
+        var par_node=target.parentNode;
+        if(par_node)
+        {
+            par_node.removeChild(target);
+        }
+    }
+    /*
+     *  修改方法用replace方法，有替换子节点和替换当前节点
+     *
+     * replaceNode  用新节点去替换老节点，如果新节点已存在，那么新节点将不在原来的位置（剪切粘贴）
+     *
+     *
+     * replaceChild  建议使用  用新节点去替换老节点，如果新节点已存在，那么新节点将不在原来的位置（剪切粘贴）
+     * oReplace = object.replaceChild(oNewNode, oChildNode)
+     * 先找到父节点，再调用方法
+     *
+     * 演示用div_3替换div_1
+     */
+    function update_node() {
+        var new_node=document.getElementById("div_3");
+        var target=document.getElementById("div_1");
+        var par=target.parentNode;
+        par.replaceChild(new_node,target);
+    }
+    /*
+     * 克隆节点
+     * 然后拿克隆的结点去替换，就能保证复制粘贴的效果
+     */
+    function copy_paste() {
+        var target=document.getElementById("div_1");
+        var new_node=document.getElementById("div_3");
+        var clone=new_node.cloneNode(true);//这个boolean值决定是否把其子节点也一并clone
+        var parent=target.parentNode;
+        parent.replaceChild(clone,target);
+    }
+</script>
+<input type="button" value="在第一块创建并添加文本节点" onclick="create_text_and_append()"/>
+<input type="button" value="在第一块创建并添加按钮节点" onclick="create_easy()"/>
+<input type="button" value="删除节点" onclick="remove_node()"/>
+<input type="button" value="修改节点" onclick="update_node()"/>
+<input type="button" value="克隆节点" onclick="copy_paste()"/>
+</body>
+
+</html>

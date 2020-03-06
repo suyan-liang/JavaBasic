@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异常处理</title>
+    <script type="text/javascript">
+        /*
+         * 由于js是弱类型，异常处理又比java简单不少，如下
+         * 大体还是一样的
+         * 自动抛出的异常err有name 和 message属性
+         * 自己也可以用throw抛出异常,但是自定义的是undefined
+         *
+         * 也是try-catch-finally体系
+         *
+         *
+         * 内置的异常
+         *
+         *   RangeError	已发生超出数字范围的错误
+         *   ReferenceError	已发生非法引用  假如您使用（引用）了尚未声明的变量，则 ReferenceError 会被抛出：
+         *   SyntaxError	已发生语法错误
+         *   TypeError	已发生类型错误
+         *   URIError	在 encodeURI() 中已发生的错误
+         *
+         *
+         *
+         *
+         *
+         *
+         */
+        function test() {
+            var data=document.getElementById("test").value;
+            try {
+                if(data>18)
+                    throw "nice!!!";
+                else 
+                    throw "你还是太年轻";
+            }
+            catch (e) {
+                document.getElementById("mesg").innerHTML=e.message;
+            }
+            finally {
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="test" value="">
+<button type="button" onclick=test()>提交</button>
+<p id="mesg"></p>
+</body>
+</html>

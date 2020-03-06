@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script type="text/javascript">
+        /*
+         * 正则表达式
+         * 和java中的很像
+         * 说点不一样的
+         * /xxxx/i   i是对大小写不敏感,g是全文搜索
+         *
+         * js中
+         * 正则表达式常用于两个字符串方法：search() 和 replace()
+         * search()函数返回匹配的位置
+         * match()返回匹配到的值!!!这个好方便，java里面matches返回boolean
+         *
+         * 其他方法暂时没发现好的，以后需要再看
+         */
+        var regex=/\w+@+\w+(\w+\.\w+)+/g;
+        var text="sahdudahoasiodabnaj dh@163.com fhasbuoasno hahh@djaio.com aidsnocn";
+        var res=text.match(regex);
+        document.write(res);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

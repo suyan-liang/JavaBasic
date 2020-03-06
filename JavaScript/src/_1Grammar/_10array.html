@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script type="text/javascript">
+        var cars=["bmw","benchi","auto"];//定义方式
+        document.write(cars+"<br/>");//直接打印元素
+        document.write(typeof cars+"<br/>");//类型是对象
+        /*
+         *  js中的数组啥都能存，一个数组还能存不同类型的数据，函数都能存.....
+         *  可以用push方法像数组中添加元素，也可以直接下标赋值，无数据的地方打印undefined
+         *  其他都和java差不多
+         */
+        cars[5]="falali";
+        print(cars);
+        function print(cars) {
+            for (var i=0;i<cars.length;i++)
+                document.write(cars[i]+"<br/>");
+        }
+        document.write("<hr/>")
+        /*
+         * 判断某个对象是否是数组
+         * 1.Array.isArray()方法
+         * 2.instanceof
+         * 3.return x.constructor.toString().indexOf("Array") > -1;自定义
+         *
+         * <br/>这个东西好迷啊.....以后别直接加在boolean型值后面，要另起一行，不然会报错不知道为啥.......
+         */
+        document.write(Array.isArray(cars)+"<br/>");
+        document.write(cars instanceof Array);
+        document.write(myArray(cars));
+        function myArray (cars) {
+            return cars.constructor.toString().indexOf("Array")>-1;
+        }
+        document.write("<hr/>")
+        /*
+         * 数组转化为字符串
+         * 1.toString() 转化为,连接
+         * 2.join(String x) 转化为x连接,返回连接好的字符串
+         */
+        document.write(cars.join("&&&&&")+"<br/>");
+
+        /*
+         * 增删元素
+         * 1.push ,pop.  push() 方法返回新数组的长度  pop() 方法返回“被弹出”的值
+         * 2.shift() 方法会删除首个数组元素，并把所有其他元素“位移”到更低的索引.shift() 方法返回被“位移出”的字符串
+         * 3.unshift() 方法（在开头）向数组添加新元素,unshift() 方法返回新数组的长度
+         * 4.push/pop操作结尾;shift,unshift操作开头
+         * 5.delete可以删除元素  delete cars[0] ，会留下空洞undefined
+         * 6.splice() 方法可用于向数组添加新项 splice(from,cnt,element)  from是从哪开始（下标），cnt是删除元素熟练，element是从from开始添加的元素，
+         *   可以用来巧妙删除任何位置数据不留空洞
+         */
+        var books=["1","2","3","4","5"];
+        var x=books.shift();
+        document.write("books="+books+"<br/>"+"x="+x+"<br/>");
+        var res=books.unshift("1");
+        document.write("books="+books+"<br/>"+"res="+res+"<br/>");
+        books.splice(2,1,"被巧妙删除的3，没空洞.......");
+        document.write(books+"<br/>");
+        document.write("<hr/>")
+        /*
+         * 1.concat()方法连接数组
+         * 2.slice方法切割数组，一个参数x [x,length)  两个参数x,y [x,y)  ,返回数组
+         */
+        var ans=books.concat(cars);
+        document.write(ans+"<br/>");
+        var sliced=books.slice(2);
+        document.write(sliced+"<br/>");
+        var anonther=books.slice(2,3);
+        document.write(anonther+"<br/>");
+        /*
+         * 数组中的sort方法，默认按ASCII码进行升序排列，可以指定排序函数
+         * 排序函数定义，C++中return a>b  等效于这里的  return a-b  这是按正负零排序
+         */
+        var arr=[55,6,1,45,333];
+        function cmp(a,b) {
+            return a-b;
+        }
+        arr.sort(cmp);
+        document.write(arr+"<br/>");
+        function random_Sort(a,b) {
+            return 0.5 - Math.random();//random范围[0,1) 所以是随机的
+        }
+        arr.sort(random_Sort);
+        document.write(arr+"<br/>");
+        /*
+         * 获取数组最值
+         * XXX.apply是一个调用函数的方法，其参数为：apply(Function, Args)
+         * Function为要调用的方法，Args是参数列表，当Function为null时，可认为默认为apply(Math.max, arr)
+         * Math.max.apply(null, arr)最大值;Math.min.apply(null, arr)最小值
+         *
+         * 也可以自己写一个函数实现..
+         *
+         * 比较对象数组就类似于C++比较结构体，方法一致
+         *
+         */
+        document.write("max="+Math.max.apply(null,arr)+"<br/>");
+        document.write("min="+Math.min.apply(null,arr)+"<br/>");
+        /*
+         * 数组迭代
+         * 1.array.forEach(function(value, index, arr), thisValue)
+         *  其中value必选，index和arr可以不必须，但按顺序，thisValue可以不传
+         * 2.Array.map()   和forEach的区别在于它会返回一个新数组，不会对原数组进行改变，function(value, index, arr)
+         * 3.Array.filter() 过滤器，有点像java那个。返回通过测试的数组,测试函数的参数和上面的一样，function(value, index, arr)
+         * 其他的reduce之类的感觉没必要,用到再看
+         * 4.findIndex()返回索引注意一下
+         * 5.还是for循环最香
+         */
+        document.write("<hr/>");
+        var array=[1,2,3,4,5];
+        array.forEach(multi2);
+        document.write(array+"<br/>");
+        function multi2(value,index,arr) {
+            arr[index]=value*2;//这里面对value直接操作不会影响到原数组，毕竟是参数。
+        }
+        var newarray=array.filter(test);
+        document.write(newarray+"<br/>");
+        function test(value,index,arr) {
+            return value>6;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

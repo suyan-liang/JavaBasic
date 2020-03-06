@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用语句</title>
+    <script type="text/javascript">
+        /*
+         * 语句
+         * if 和Java完全一致
+         * switch 注意 ，判断的时候是用的 ===
+         * for in 是遍历对象属性，对于数组来说是下标，这里和Java不一样
+         * while循环一致
+         *
+         */
+        var arr=["hah","heihei","xiix"];
+        for(x in arr)
+            document.write(arr[x]+"<br/>");
+        /*
+         * 标签 可以标记js语句
+         * continue 语句（不论有无标签引用）只能用于跳过一个迭代。
+         * break 语句，如果没有标签引用，只能用于跳出一个循环或一个 switch,
+         * !!!!!!!!!!!!!如果有标签引用，则 break 语句可用于跳出任意代码块
+         *
+         */
+        lable:
+        {
+            for (var i=0;i<5;i++)
+            {
+                for(var j=0;j<5;j++)
+                {
+                    document.write("i="+i+"<br/>");
+                    if(i==3)
+                        break lable;
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

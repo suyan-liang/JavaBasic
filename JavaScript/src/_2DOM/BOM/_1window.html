@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window--navigator</title>
+    <script type="text/javascript">
+        /*
+         * navigator对象是window对象下的一个对象，可以用来获取浏览器的信息（名字版本啥的）
+         *
+         * history对象可以操作历史记录URL
+         * 有back,forward和go三种方法
+         * go是跳转到指定的URL，参数number
+         * length属性
+         */
+    function info() {
+        var name=navigator.appName;//window对象可以省略，因为当前窗口就是window
+        var version=navigator.appVersion;
+        document.write("name..."+name+"<br/>");
+        document.write("version..."+version+"<br/>")
+    }
+        /*
+         * location对象
+         * 对当前URL的信息进行操作
+         *
+         * href属性  获取或设置URL字符串
+         * 设置的时候，会改变URL，并对其值进行解析，如果是http还会进行访问
+         * 这也是客户端点击按钮就可以访问服务端的一种方式，跳转页面
+         */
+        function location_href() {
+            location.href="https://www.baidu.com";
+        }
+    </script>
+</head>
+<body>
+<!--
+哇哦，这个history对象真的可以实现前进后退诶，666
+-->
+<input type="button" onclick="info()" value="显示浏览器信息"/>
+<input type="button" onclick="history.back()" value="后退">
+<input type="button" onclick="history.forward()" value="前进">
+<input type="button" onclick="location_href()" value="修改href">
+</body>
+</html>

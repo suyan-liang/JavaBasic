@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻字体大中小</title>
+    <script type="text/javascript">
+
+        /*
+         * 如何改变样式?
+         * 1.超链接或者按钮
+         * 2.预定义几种样式，单独封装到类选择器中，这样扩展性很强!!!
+         * 3.响应时间的函数参数为一个选择器，在函数内容通过修改style属性进行修改样式
+         * 4.对于事件的响应，比如按钮被按下，则把选择器传到函数中。
+         *
+         */
+
+        /**
+         * 不那么好的版本
+         * @param font_size
+         */
+        function change(font_size) {
+            var div_cnode = document.getElementById("news");
+            var nodes = div_cnode.getElementsByTagName("p");
+            for (var i = 0; i < nodes.length; i++) {
+                nodes[i].style.fontSize = font_size + "px";
+            }
+        }
+        function change_style(selector) {
+            var target=document.getElementById("news");
+            target.className=selector;
+        }
+    </script>
+    <style>
+        #news{
+            border: springgreen solid 5px;
+            width:600px;
+            align-self: center;
+        }
+        a:hover{
+            color: chartreuse;
+        }
+        .blue{
+            background-color: aqua;
+            font-size: 30px;
+        }
+        .green{
+            background-color: springgreen;
+            font-size: 20px;
+        }
+        .red{
+            background-color: crimson;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>这是新闻标题</h1>
+<hr/>
+<!--
+
+!!!!!!!!取消超链接的默认点击效果，设置新的事件响应
+
+-->
+<a href="javascript:void(0)" onclick="change_style('blue')">大字体</a>
+<a href="javascript:void(0)" onclick="change_style('green')">中字体 </a>
+<a href="javascript:void(0)" onclick="change_style('red')">小字体</a>
+<div id="news">
+    <p id="text1">
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+    </p>
+    <p id="text2">
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+    </p>
+    <p id="text3">
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+        这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容这是新闻内容
+    </p>
+</div>
+</body>
+</html>

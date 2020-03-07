@@ -25,6 +25,14 @@
                 nodes[i].style.fontSize = font_size + "px";
             }
         }
+
+        /**
+         * 分析:
+         * 1.先获取到需要修改的元素
+         * 2.把对应元素的类名改成传进来的类名
+         * 这样加载时就变换样式了
+         * @param selector 类选择器的类名
+         */
         function change_style(selector) {
             var target=document.getElementById("news");
             target.className=selector;

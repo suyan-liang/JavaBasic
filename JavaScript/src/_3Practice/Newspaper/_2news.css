@@ -1,0 +1,13 @@
+.blue{
+    background-color: aqua;
+    font-size: 30px;
+}
+.green{
+    background-color: springgreen;
+    font-size: 20px;
+}
+.red{
+    background-color: crimson;
+    font-size: 10px;
+}
+/*这里把类标签单独封装到一个css文件中，链接进HTML文档，以后想添加什么样式，直接修改css文件即可，扩展性强*/

@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>新闻字体大中小</title>
+    <link rel= "stylesheet" href="_2news.css" type="text/css"/>
+    <!--
+    记住link的调用方法rel href type，缺一不可
+    可以使用link方法引入css文件
+    也可以在style标签里面@import导入css文件
+    -->
     <script type="text/javascript">
 
         /*
          * 如何改变样式?
-         * 1.超链接或者按钮
-         * 2.预定义几种样式，单独封装到类选择器中，这样扩展性很强!!!
-         * 3.响应时间的函数参数为一个选择器，在函数内容通过修改style属性进行修改样式
+         * 1.组件：超链接或者按钮
+         * 2.预定义几种样式，单独封装到类选择器中，可以通过css文件导入，扩展性更强
+         * 3.响应事件的函数参数为一个选择器，在函数内容通过修改style属性进行修改样式
          * 4.对于事件的响应，比如按钮被按下，则把选择器传到函数中。
          *
          */
@@ -47,18 +53,7 @@
         a:hover{
             color: chartreuse;
         }
-        .blue{
-            background-color: aqua;
-            font-size: 30px;
-        }
-        .green{
-            background-color: springgreen;
-            font-size: 20px;
-        }
-        .red{
-            background-color: crimson;
-            font-size: 10px;
-        }
+
     </style>
 </head>
 <body>

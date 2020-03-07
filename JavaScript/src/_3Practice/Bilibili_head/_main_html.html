@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    一般思路
+    1.标签封装数据  html
+    2.定义样式      css
+    3.明确事件源，事件以及要处理的结点  dom
+    4.明确如何操作结点                 js
+    -->
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <style type="text/css">
+        /*
+         * 你已经指定一个容器的大小
+         * 当容器中的数据内容超出容器大小时超出部分怎么办?使用overflow属性
+         * 默认 visible 可见
+         * hidden:隐藏且无滚动条   scroll 隐藏且有滚动条   auto:比scroll只能，溢出时有滚动条，平时没有
+         * 从hidden变成visible，如果高度不auto就会遮住别的东西
+         */
+        dl dd{
+            margin: 0px;
+            background-color: pink;
+        }
+        dl{
+            background-color: pink;
+            width: 300px;
+            height: 20px;
+            /*20px刚好显示一行字*/
+            overflow: hidden;
+        }
+
+        .close_list{
+            overflow: hidden;
+        }
+        /*这里的，在打开时，height要进行自适应，否则会遮挡住别的元素，不加auto的时候可以认为是强占地盘*/
+        .open_list{
+            overflow: visible;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<!--函数的操作方式修改visible-->
+<script type="text/javascript">
+
+
+
+    /**
+     * 鼠标往上一放
+     * 就显示隐藏内容
+     */
+    function show_list() {
+        var node=document.getElementById("list");
+        node.style.overflow="visible";
+    }
+
+    /**
+     * 鼠标一离开
+     * 就继续隐藏内容
+     */
+    function close_list() {
+        var node=document.getElementById("list");
+        node.style.overflow="hidden";
+    }
+
+    /**
+     * 用选择器的方式来变更样式
+     * 扩展性更强
+     * 以后都用这种方式
+     */
+    function change(selector) {
+
+        var nodes=document.getElementsByTagName("dl");
+        //切记，修改的是类名，不是直接修改overflow
+        nodes[0].className=selector;
+    }
+    /*
+     *  this指针可以只带当前对象
+     *  经常当做参数被传递!!!!!
+     * 最常用的方法
+     */
+    function change_popular(node,selector) {
+
+        var par=node.parentNode;
+        par.className=selector;
+
+    }
+</script>
+<div>
+    <dl id="list_1" class="close_list"  >
+
+        <dt  onmouseover="change_popular(this,'open_list')" onmouseout="change_popular(this,'close_list')">
+            主站1
+        </dt>
+        <dd>动画</dd>
+        <dd>    </dd>
+        <dd>番剧</dd>
+        <dd>    </dd>
+        <dd>国创</dd>
+        <dd>    </dd>
+        <dd>音乐</dd>
+    </dl>
+</div>
+<div>
+    <dl id="list_2" class="close_list">
+
+        <dt  onmouseover="change_popular(this,'open_list')" onmouseout="change_popular(this,'close_list')">
+            主站2
+        </dt>
+        <dd>舞蹈</dd>
+        <dd>    </dd>
+        <dd>游戏</dd>
+        <dd>    </dd>
+        <dd>科技</dd>
+        <dd>    </dd>
+        <dd>数码</dd>
+    </dl>
+</div>
+<div>
+    <dl id="list_3" class="close_list">
+
+        <dt  onmouseover="change_popular(this,'open_list')" onmouseout="change_popular(this,'close_list')">
+            主站3
+        </dt>
+        <dd>生活</dd>
+        <dd>    </dd>
+        <dd>鬼畜</dd>
+        <dd>    </dd>
+        <dd>时尚</dd>
+        <dd>    </dd>
+        <dd>广告</dd>
+    </dl>
+
+</div>
+
+</body>
+</html>

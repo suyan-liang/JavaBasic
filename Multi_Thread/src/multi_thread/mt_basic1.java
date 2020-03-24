@@ -23,6 +23,9 @@ package multi_thread;
 */
 
 
+/**
+ * finalize函数是处理垃圾的函数
+ */
 class mainThreadTest extends Object
 {
 
